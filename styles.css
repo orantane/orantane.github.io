@@ -1,4 +1,9 @@
 /* Master styles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+:root {
+	--link-color: rgb(0, 87, 209);
+}
 
 body {
     font-family: "Lato", sans-serif;
@@ -14,6 +19,7 @@ body {
 
 .nav-wrapper {
     display: flex;
+	background: white;
     justify-content: space-between;
     padding: 38px;
 }
@@ -34,6 +40,7 @@ body {
 }
 
 .nav-link-wrapper {
+	display: flex;
     height: 22px;
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.5s;
@@ -71,6 +78,10 @@ body {
     position: relative;
 }
 
+.portfolio-item-wrapper:hover{
+    position: relative;
+}
+
 .portfolio-img-background {
     height: 350px;
     width: 100%;
@@ -93,45 +104,191 @@ body {
     padding-right: 100px;
 }
 
+.logo-wrapper {
+	color: white;
+	background: rgb(43, 43, 43);
+	border-radius: 5em;
+	padding: 1em;
+	font-family: Nunito;
+	font-size: 1em;
+	position: relative;
+}
+
 .logo-wrapper img{
     width: 50%;
     margin-bottom: 20px;
 }
 
 .img-text-wrapper .subtitle {
-    transition: 1s;
+	font-family: Nunito;
+    transition: .5s;
     font-weight: 600;
     color: transparent;
 }
 
 .img-text-wrapper:hover .subtitle {
     font-weight: 600;
-    color: darkslategray;
+    color: rgb(148, 148, 148);
 }
 
 .img-darken {
-    transition: 1s;
-    opacity: 5%;
-    filter: brightness(400%);
+    transition: 0.5s;
+    opacity: 95%;
+    filter: brightness(5%);
 }
 
-/* About */
+/* Intro styles ## ADD A 0,5 SEC TRANSITION TO EVERY SCREEN ## */
+
+.intro-wrapper {
+	display: flex;
+	text-align: center;
+	flex: 1 1 auto;
+}
+
+.index-background {
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+}
 .two-colum-wrapper {
     display: grid;
+	background-image: url("images/background.png");
+	background-color: rgb(237, 228, 219);
+	background-size: cover;
+	background-repeat: no-repeat;
     grid-template-columns: 1fr 1fr;
+	padding: 5%;
+}
+
+.profile-image-wrapper {
+	background-color: rgb(237, 228, 219);
+	min-width: 300px;
+	width: auto !important;
+	max-width: 800px;
+	margin-left: 12%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .profile-image-wrapper img {
-    width: 100%;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+    width: 250px;
+	height: 250px;
+	position: relative;	
 }
 
 .profile-content-wrapper {
-    padding: 30px;
-    text-align: center;
-    background-color: rgb(230, 230, 230);
+	font-family: "Nunito", sans-serif;	
+	position: relative;
+    padding: 20px;
+	min-width: 400px;
+	width: auto !important;
+	width: 1000px;
+	margin-right: 40%;
+	margin-left: 4%;
+	margin-inline-start: 100px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+}
+
+.profile-image-wrapper p{
+	font-size: 35px;
+	font-weight: 600;
+}
+
+hr { 
+	display: block; 
+	overflow: hidden;
+	border-style: inset;
+	border-width: 0px;
+	width: 20%;
+	height: 4px;
+	background-color: var(--link-color);
+}
+
+.profile-image-wrapper h2{
+	font-family: "Nunito", sans-serif;
+	padding: 10%;
+	padding-bottom: 10%;
+	font-size: 20px;
+	font-weight: 200;
 }
 
 .profile-content-wrapper h1 {
-    color: rgb(68, 68, 68);
+	font-family: "Lato", sans-serif;
+	font-size: 60px;
+	font-weight: 800;
 }
 
+.profile-content-wrapper p a{
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+.profile-link-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 3%;
+	margin-bottom: 5%;
+	padding-right: 7%;
+	padding-left: 7%;
+}
+
+.profile-link {
+	font-family: "Nunito", sans-serif;
+	background: var(--link-color);
+	color: white;
+	text-decoration: none;
+	padding: .6em 1.3em;
+	border-radius: 5em;
+	font-weight: bold;
+	display: inline-block;
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--link-color);
+}
+
+.profile-link a{
+	font-family: "Nunito", sans-serif;
+}
+
+.profile-link-container a:hover {
+	transition: 300ms;
+    background: rgb(255, 255, 255);
+	text-decoration: underline;
+	color: rgb(0, 64, 155);
+	border-width: 2px;
+	border-style: groove;
+	border-color: rgb(0, 64, 155);
+}
+
+.push-down {
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 auto;
+}
+
+.bottom-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+	font-family: sans-serif;
+	font-size: small;
+	color: gray;
+	align-items: center;
+}
+
+.bottom-center img {
+	opacity: 50%;
+}
+
+.bottom-right img {
+	opacity: 60%;
+}
+
+/* Contact */
