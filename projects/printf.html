@@ -36,13 +36,39 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>printf</h1>
+					<p>Recoding a familiar function.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/printf.jpg);">
 				</div>
+				<div class="github-link">
+					<a href="https://github.com/orantane/ft_printf" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
+				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+					<p>Printf is one of the first functions people use when they start to learn how to code. It's the function that prints out text on the standard output, like "Hello World". We are not allowed to use
+						printf at school projects, so I only had ever used it on debugging. So when I first started the project I didn't really know what I was getting into. This was the next project after Fillit.
+					</p>
+					<p>The project was descriped in the assignment as such: "The versatility of the printf function in C represents a great exercise in programming for
+						us. This project is of moderate difficulty. It will enable you to discover variadic functions
+						in C in a particularly relevant context as well as learn about a great example of a basic
+						“dispatcher” in C via the use of an array of function’s pointers."
+					</p>
+					<p>The usual school restrictions applied to this project, so no crashing, memory leaks etc. The project must have a Makefile that compiles a function library that includes the printf we are building. 
+						Allowed functions were write, malloc, free, exit and the functions of (3) stdarg library. The function will be prototyped similarly to the original printf, but will be called ft_printf.
+					</p>
+					<p>The function had to manage the following:</p>
+					<ul>
+						<li>Minimum field-width.</li>
+						<li>Precision.</li>
+						<li>Conversions: c, s and p.</li>
+						<li>Conversions: d, i, o, u, x and X with the following flags: hh, h, l and ll.</li>
+						<li>f with the flags: l and L.</li>
+						<li>The double percentage (%%).</li>
+						<li>Flags #, 0, -, + and space for all conversions.</li>
+					</ul>
+					<p>As a bonus you could include additional functionality and conversions. I added a binary conversion with the flag "b", that works with the generic flags. I finished the first draft of the project in a week. It had all the functionality in place,
+						however it had multiple bugs and it did not function the same way the original C-library printf. It took me quite a long time of tedious testing and reverse engineering of the original printf to figure out the correct order for flags and conversions.
+					</p>
 				</div>
 			</div>
 			<div class="bottom-wrapper">

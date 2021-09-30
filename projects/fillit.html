@@ -36,13 +36,38 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>fillit</h1>
+					<p>Fill a square with randomized tetris blocks in the most space saving way.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/fillit.jpg);">
 				</div>
+				<div class="github-link">
+					<a href="https://github.com/rikikoo/fillit" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
+				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+					<p>This was the first group project so I paired up with a fellow Hive student <a href="https://github.com/rikikoo" target="_blank" rel="noopener noreferrer">Riki Kyttälä</a> for this project. 
+						The goal was to create a program that would take in randomized tetris blocks and organize them to fit the smallest square possible. This program would take text files as input, which have all 
+						the blocks in a predetermined format. Invalid files would be disgarded. The given tetris blocks can't be rotated by the program and must be used in the orientation that they were
+						presented. These blocks will then have to be fitted into a smallest possible square and each block will have to be labelled with the alphabet character in correspondece with the order it was given in the input file. 
+						All blocks must also be as top-left of the square as possible. There are examples provided in the Github page. The usual school rules applied, the program must not crash, have memory leaks or use forbidden functions/variables.
+					</p>
+					<p>Once we had a rough idea on the program's structure, we decided to split it up in two so that both of us had about as much work as the other. The main components were:
+						<ul>
+							<li>Validate input</li>
+							<li>Read and save the blocks separately</li>
+							<li>Find the optimal configuration for the blocks</li>
+							<li>Print out the correct configuration</li>
+						</ul>
+						I took up validating the input, reading the blocks, converting them to coordinate arrays and saving them to a linked list. The biggest challenge for me was to validate the input, since in the evaluation for this project there 
+						were going to be a lot of invalid input. The end result can be seen in the <a href="https://github.com/rikikoo/fillit/blob/master/check.c" target="_blank" rel="noopener noreferrer">check.c</a> file on Github.
+					</p>
+					<p>For the storing of the blocks I determined that coordinates in a linked list was the right way to go. In the text file the grid is a 4x4 and the block is somewhere within it, but in order to use the block we needed to trim out the extra space.
+						We decided that I would store the X and Y coordinates in a linked list node that would contain two integer arrays. Riki would then use the linked list to find the optimal solution by using a backtracking algorithim to go through all of the blocks.
+						There were bonus points to be had if the program was fast enough, however we did not know what the time limit was. Our program performed really well up until 15 blocks, after that the runtime strated to be multiple seconds and it increased exponentially.
+						I tried to implement a optimizing algorithm that would be able to see forward and abort any calculations that were always going to fail. It increased the permormance by about 900 %, however it brought with it a loss of accuracy of ≈ 0.01 %. In the end our
+						program was fast enough for bonus points without the optimization and the loss of accuracy was unacceptable. There were a few ways we could have improved on the optimization, but we decided not to since it was not needed for the completion of the project.
+					</p>
+					<p>Once we had our parts finished, we got together and started to troubleshoot the myriad of bugs and issues we had encountered. Naturally we also explained to each other what we had done in detail, since it was a school project meant for learning.</p>
 				</div>
 			</div>
 			<div class="bottom-wrapper">

@@ -36,13 +36,42 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>get_next_line</h1>
+					<p>A function that reads a line from a file and saves it into a string.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/gnl_title.png);">
 				</div>
+				<div class="github-link">
+					<a href="https://github.com/orantane/get_next_line" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
+				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+
+					<p>In this project the goal was to create a function that could read a line from a file and return it as a string.
+						The function also needed to remember its position in the file, so that when it was called upon again, it would read
+						the following line instead of the same one every time.
+					</p>
+					<p>This was my third project at Hive Helsinki and it was to be added into the library I had built as my previous project.
+						The function would be used a lot in upcoming projects, so efficiency was important. There were also bonus points to be had
+						if the function only had one static variable. With these things in mind I set up to create the most efficient and fast
+						function I could come up with. The task itself was simple, but while trying to achieve the best efficiency the implementation
+						went through multiple revisions until I was happy with the performance.
+					</p>
+					<p>On school projects we are usually not allowed to use pre-existing function libraries or functions outside of a few which are disclosed in the assignement. For this project, I was allowed to use malloc, free and write functions.
+
+						Every school project also has similar baseline requirements, however they can change a bit depending on what is the goal of the project. For this project, the requirements were: The program/function/library must not have any memory leaks. 
+						It must not crash at any point. It's forbidden to use global variables. The code must be written in accordance with the Norm (Norm is a set of rules on how to format the code, so that everyone at the school has code that others can easily read). 
+						The function needs to fit within a file that contains a maximum of five functions and 25 lines per function. The function is prototyped as "int  get_next_line(int fd, char **line)". The first parameter is the file descriptor that will be used to read.
+						The second parameter is the address of a pointer to a character that will be used to save the line read from the file descriptor. The function must save the line without the newline character. The return value can be 1, 0 or -1 depending on whether a 
+						line has been read, when the reading has been completed, or if an error has happened respectively. 
+					</p>
+					<p>Bonus points could be earned if the function only had a single static variable and if it was able to handle the reading of multiple file descriptors at 
+						the same time without losing the reading thread on each of the descriptors. In my project I managed to complete both of these bonuses by using a static array of pointers, one pointer for each file descriptor.
+					</p>
+					<p>For benchmarking I downloaded a .txt file of an ebook that had over 100 000 lines of text. I then wrote a simple program that
+						would read the book line by line and print out the result at the same time using the printf function. Once I achieved a time
+						that was under 10 seconds with the school iMac, I was happy with the functions performance. I then added the function to the libft
+						library.
+					</p>
 				</div>
 			</div>
 			<div class="bottom-wrapper">

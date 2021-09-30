@@ -341,6 +341,12 @@ hr {
     background-repeat: no-repeat;
 }
 
+.github-link {
+	display: flex;
+	justify-content: center;
+	padding-top: 2%;
+}
+
 .project-content {
 	font-family: "Nunito", sans-serif;
 	padding: 1% 10% 1% 10%;
@@ -357,13 +363,16 @@ hr {
 	display: flex;
 	position: relative;
 	width: 50vw;
-	max-inline-size: 700px;
+	max-inline-size: 600px;
 }
 
 .subtitle{
-	color: rgb(56, 56, 56);
+	color: rgb(75, 75, 75);
 	text-align: center;
 	margin-top: 0;
+	padding-top: 1%;
+	padding-left: 15%;
+	padding-right: 15%;
 }
 
 /* Contact */

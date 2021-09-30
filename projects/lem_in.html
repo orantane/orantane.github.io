@@ -36,13 +36,78 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>lem_in</h1>
+					<p>A program that calculates the optimal path and flow for ants moving through a maze of rooms.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/lem_in.jpg);">
 				</div>
+				<div class="github-link">
+					<a href="https://github.com/orantane/lem-in" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
+				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+					<p>This was a school project I did with <a href="https://github.com/krsalmi">Kristiina</a> at Hive Helsinki. Our task was to create a program written in C, 
+						that finds the optimal solution to move ants in the most efficient way through a maze of rooms that are connected to eachother via links. To achieve this 
+						we studied a number of pathfinding algorithms and implemented our own version. We took inspiration from A(*), Edmonds-Karp and different flow algorithms. We've optimized the program in multitude of ways, for example we use a 
+						hash table to store the room names to speed up the room building process. It can find the optimal solution and execute the moves for 1000 ants and 2000 rooms with 8000 links in ≈0,1 seconds on the school iMacs.
+						We ended up with a program that is very fast and accurate. We also included a file that contains resources for testing the program (maps, generator, testing script etc). The generator was provided to us in the subject. 
+						We included a few flags as a bonus to make the output a bit more understandable in bigger maps.
+					</p>
+					<p>My contributions for the project included: The general design of the data structures. The pathfinding implementation and structures. Hashing of the rooms. Calculating the optimal set of paths found by the pathfinding algorithm.
+						Calculating and printing of each move made by the ants. Implementing the optional flags.
+					</p>
+					<p>Our workflow consisted of close collaboration at all stages of the project. We brainstormed, troubleshooted and coded together throughout the project, which was helpful since that way we both had a deep understanding of the code itself.</p>
+					<p>The hardest part about this assignement was not necessarily the code itself, but the speed and accuracy requirements. We had a version up and running within a few days, however it was inaccurate and missed the optimal solution by
+						quite a few moves on the most difficult maps.
+					</p>
+					<p>The program is run in a terminal window. It accepts valid text files as input, which include the data about the ants, the maze and the links within the maze. On Github, we've included the map file generator we got with
+						the assignement. To run the program with the generator use "./generator --[map_option] | ./lem-in -[flags]". To use a file as input, use "./lem-in -[flags] < [a map from a file]". Map options are: flow-one, flow-ten, flow-thousand,
+						big and big-superposition. Flag options and their descriptions can be found by running ./lem-in -h, which shows the usage for the program.
+					</p>
+					<p>A few lines from the assignement that describes the project and its goals: We make an ant farm, with tunnels and rooms. We place the ants on one side and we look at how they find the exit. We join the rooms to one another with as 
+						many links as we need. A link joins two rooms to each other. A room can be linked to an infinite number of rooms and by as many links as deemed necessary. The program will receive the data describing the ant farm from the 
+						standard output in the following format: number_of_ants, the_rooms and the_links.
+						<p>There are two parts:</p>
+						<ul> 
+							<li>The rooms, which are defined by: name coord_x coord_y</li>
+							<li>The links, which are defined by: name1-name2</li>
+						</ul>
+						Comments start with "#" and end in a newline. Lines that start with "##"" are commands modifying the properties of the line that comes right after. For example, ##start signals the ant farm’s entrance and ##end its exit.
+						<div class="center-image"><img src="../images/lem-in-example.png" class="paragraph-image"></div>
+						<div class="subtitle">An example of a small map file.</div>
+					</p>
+					<p>The goal of this project is to find the quickest way to get n ants across the farm.
+						<ul>
+							<li>Quickest way means the solution with the least number of lines, respecting the output format requested below.</li>
+							<li>Obviously, there are some basic constraints. To be the first to arrive, ants will need to take the shortest path (and that isn’t necessarily the simplest). They will also need to avoid traffic jams as well as walking all over their fellow ants.</li>
+							<li>At the beginning of the game, all the ants are in the room ##start. The goal is to bring them to the room ##end with as few turns as possible. Each room can only contain one ant at a time. 
+								(Except at ##start and ##end which can contain as many ants as necessary.)</li>
+							<li>We consider that all the ants are in the room ##start at the beginning of the game.</li>
+							<li>At each turn you will only display the ants that moved.</li>
+							<li>At each turn you can move each ant only once and through a link (the room at the receiving end must be empty).</li>
+							<li>You must to display your results on the standard output in the following format:
+								<ol>
+									<li>number_of_ants</li>
+									<li>the_rooms</li>
+									<li>the_links</li>
+									<li>Lx-y Lz-w Lr-o ... (x, z, r represents the ants’ numbers (going from 1 to number_of_ants) and y, w, o represents the rooms’ names.)</li>
+								</ol>
+							</li>
+							<li>Of course, your algorithm must render within a reasonable time, even in a case with 4000 rooms. 2 or 3 seconds is great, 9 seconds is mediocre, 15 seconds is too much.</li>
+						</ul>
+						<div class="center-image"><img src="../images/lem-in-ants.gif" class="paragraph-image"></div>
+						<div class="subtitle">An illustration made by Kristiina of a simple set of rooms and links with four ants.</div>
+						Within the mandatory part you are allowed to use the following functions:
+						<ul>
+							<li>malloc</li>
+							<li>free</li>
+							<li>read</li>
+							<li>write</li>
+							<li>strerror</li>
+							<li>perror</li>
+							<li>exit</li>
+						</ul>
+						The standard school rules also apply to this project. So the program must not crash or have any memory leaks at any point with any input. The coding must be in accordance to the Norm (coding standard for the school, max 25 lines per function etc.) Global variables are forbidden.
+					</p>
 				</div>
 			</div>
 			<div class="bottom-wrapper">

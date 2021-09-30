@@ -36,13 +36,36 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>roger_skyline</h1>
+					<p>A school project about network administration and linux based web hosting.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/roger_skyline.jpg);">
 				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+					<p>Roger_Skyline was the second project in the system and network administration branch at Hive Helsinki. The task was to setup a Debian virtual machine and configure it to be a secure and reliable platform to host a website on.
+						As part of the project I decided to code my own website from scratch, so that I could host it on the server while learning more about HTML, CSS and JavaScript. Later on I decided to make the website more extensive 
+						and useful, which resulted in the website you are now viewing. Overall I succeeded well in this project, scoring 100/100 points.
+					</p>
+					<p>The initial step was to setup the VM in accordance to the assignement, which specified multiple different specs. When the VM was up and running, it was time to setup the network and security systems. The assignement 
+						had a list of requirements:
+					</p>
+					<ul>
+						<li>You must create a non-root user to connect to the machine and work.</li>
+						<li>Use sudo, with this user, to be able to perform operation requiring special rights.</li>
+						<li>We don’t want you to use the DHCP service of your machine. You’ve got to configure it to have a static IP and a Netmask in \30.</li>
+						<li>You have to change the default port of the SSH service by the one of your choice. SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT be allowed directly, but with a user who can be root.</li>
+						<li>You have to set the rules of your firewall on your server only with the services used outside the VM.</li>
+						<li>You have to set a DOS (Denial Of Service Attack) protection on your open ports of your VM</li>
+						<li>You have to set a protection against scans on your VM’s open ports.</li>
+						<li>Stop the services you don’t need for this project.</li>
+						<li>Create a script that updates all the sources of package, then your packages and which logs the whole in a file named /var/log/update_script.log. Create a scheduled task for this script once a week at 4AM and 
+							every time the machine reboots.</li>
+						<li>Make a script to monitor changes of the /etc/crontab file and sends an email to root if it has been modified. Create a scheduled script task every day at midnight.</li>
+					</ul>
+					<p>I used Fail2Ban as DOS protection and PortSentry as my port security.</p>
+					<p>Following these configurations was the web part: "You have to set a web server who should BE available on the VM’s IP or an host (init.login.com for exemple). About the packages of your web server, you can choose 
+						between Nginx and Apache. You have to set a self-signed SSL on all of your services. Propose a functional solution for deployment automation."
+					</p>
 				</div>
 			</div>
 			<div class="bottom-wrapper">

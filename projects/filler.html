@@ -36,13 +36,71 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>filler</h1>
+					<p>An algorithmic game to conquer the most space on a map.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/DSC00080.jpg);">
 				</div>
+				<div class="github-link">
+					<a href="https://github.com/orantane/filler" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
+				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+					<p>Filler is an algorithmic game which consists in filling a grid of a known size in advance with pieces of random size and shapes, without the pieces being stacked 
+						more than one square above each other and without them exceeding the grid. If one of these conditionsis not met, the game stops. Each successfully placed piece 
+						yields a number of points. There are two players, each player take turns placing as randomly generated 2D piece on a grid while attempting to prevent the opponent from doing the same. 
+						At the end of the game, the one with the most points wins the match. The players are filler-programs and the grid and pieces are supplied by a virtual machine.
+					</p>
+					<p>The usage can be found on the Github page.</p>
+					<p>I approached the problem by trying to understand what is the most efficient way of eliminating possible moves from the opponent while maximizing the efficient use of space 
+						from my point of view. In the end there was a clear winning strategy; always place a piece as close to the opponent as possible. There is a point to be made that this is 
+						not always the best solution. The algorithm could be even better if we use this strategy, but also check the boardstate which we could use to decide between two equally 
+						close positions and choose the best one.
+					</p>
+					<p>I achieved the desired result by creating a heatmap of the board, which gave values to each position acending the further we get from the opponents pieces. This way we can 
+						check the lowest combined value of each position on the board and place the piece to a position with the lowest sum. This method turned out to be really good and it ended 
+						up beating all opponents given in the subject with extremely high probability. My algorithm was also able to beat most other algorithms created by my fellow students at the 
+						school. It is also one of the faster ones.
+					</p>
+					<div class="center-image"><img src="../images/filler-illustration.gif" class="paragraph-image"></div>
+					<div class="subtitle">Filler program battle visualized by <a href="https://github.com/mdubus/filler/blob/master/README.md">Mdubus</a>, a student of 42 Paris. My filler doesn't include a visualizer for the battle, so I'm borrowing their illustration.</div>
+					<p>The assignement and rules for the project:</p>
+					<ul>
+						<li>In this game, two players fight each other. They play one after the other.</li>
+						<li>The goal is to collect as many points as possible by placing the highest number of pieces on the the game board.</li>
+						<li>The board is defined by X columns and N lines, it will then become X*N cells.</li>
+						<li>At the beginning of each turn, you will receive your game piece.</li>
+						<li>A game piece is defined by X columns and N lines, so it will be X*N cells. Insidee ach game piece, will be included a shape of one or many cells.</li>
+						<li>To be able to place a piece on the board, it is mandatory that one, and only one cell of the shape (in your piece) covers the cell of a shape placed previously (your territory).</li>
+						<li>The shape must not exceed the dimensions of the board.</li>
+						<li>When the game starts, the board already contains one shape.</li>
+						<li>The game stops at the first error: either when a game piece cannot be placed anymore or it has been wrongly placed.</li>
+					</ul>
+					<p>A board is a two-dimensional grid with an arbitrary number of rows and columns. To launch the game an initial board must be passed as an argument to the VM. This initial board must have a starting form for each player.
+						The tokens/pieces are managed randomly by the VM. You can’t predict their size or shape untilthe VM transmits them to your program. Examples of these can be found on the Github Readme.
+					</p>
+					The Player
+					<ul>
+						The executable that will enable you to play the filler is attached to this subject.
+   						For this project, you will have to create a filler player. Your goal is to win:
+    				    <li>It will read the board and the game pieces placed on the standard output.</li>
+        				<li>Each turn the filler rewrites the board map and includes a new piece to be placed.</li>
+        				<li>In order to place the game piece on the board, the player will have to write it’s coordinates on the standard ouput.</li>
+       					<li>The following format must be used “Y X\n”.</li>
+       					<li>You will collect points each time you place a piece.</li>
+					</ul>
+					Two Players
+					<ul>
+						Player Number:
+						<li>The first two lines of the filler must be in the following format: $$$ exec pPLAYER_NUMBER : [PLAYER_NAME]</li>
+						<li>The filler will only send the line that concerns your program. You’ll have to get your player number.</li>
+						<li>If you are Player 1 your program will be represented by “o” and “O”. If you are Player 2, your program will be represented by “x” and “X”. The first step will be to get your player number.</li>
+						<li>The lowercases (“x” or “o”) will highlight the piece last placed on the board. At the following turns, that same piece will be represented by the uppercase letters (“X” or “O”), as it won’t be the piece last placed anymore.</li>
+						<li>You will collect points each time you place a piece.</li>
+						How the game works:
+						<li>At each turn, the filler will send the updated map and a new token to the player concerned.</li>
+						<li>The player concerned will write on the standard output his or her piece’s coordinates to place it on the board.</li>
+						<li>The filler will send the map and a new piece to the other player.</li>
+					</ul>
 				</div>
 			</div>
 			<div class="bottom-wrapper">
