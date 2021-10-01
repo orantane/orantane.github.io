@@ -36,21 +36,41 @@
             </div>
 			<div class="project-wrapper">
 				<div class="project-title">
-					<h1>This is the title</h1>
-					<p>This is the subtitle.</p>
+					<h1>corewar</h1>
+					<p>This project is a replica of the computer game Core War, launched in 1984.</p>
 				</div>
 				<div class="project-image" style="background-image: url(../images/corewar.jpg);">
 				</div>
 				<div class="github-link">
-					<a href="https://github.com/orantane/corewar" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
+					<a href="https://github.com/avocadohooman/42-Corewar" target="_blank" rel="noopener noreferrer" class="profile-link">View the code in Github</a>
 				</div>
 				<div class="project-content">
-					<p>This is where the project is explained</p>
+					<p>Corewar was the first team project at Hive Helsinki that included more than two person groups. Our group consisted of four people: <a href="https://github.com/avocadohooman" target="_blank" rel="noopener noreferrer">Gerhard</a>, 
+						<a href="https://github.com/nikunicke" target="_blank" rel="noopener noreferrer">Niklas</a>, <a href="https://github.com/samulieronen" target="_blank" rel="noopener noreferrer">Samuli</a> and me. The assignement was to create a replica of the computer game Core War.
+						The game itself is simple, the last player alive wins, however we had to build our own assembler that compiles Assembly code into bytecode, build a champion and build a virtual machine that lets Corewars champions to fight in an arena.
+						The champions are programs written in a custom assembly language and the arena is a continous location in memory which can be set to any size. The default size for the arena is 4096 bytes. A champion is alive if it executes a "live" instruction 
+						during a predetermined but ever decreasing set of cycles of the game. The champions have 16 different instructions available, each of which have their own cost in cycles. You can find more information about the game in the games 
+						<a href="https://en.wikipedia.org/wiki/Core_War" target="_blank" rel="noopener noreferrer">Wikipedia page. There is also additional information on this project in the Github repository Wiki page.</a>
+					</p>
+					<p>We started the project off with a meeting where we decided that we'd work quite closely together throughout the project, since its a school project and meant for learning. That way we could have discussions about important 
+						decisions and everyone would be able to understand what the code and its purpose was. We had coding sessions where each of us coded our parts of the project while discussing it on voice chat. We heavily relied on Git version 
+						control at all times during the project and we all had our own branches. We also utilized an online collaboration tool Whimsical to create mind maps for the overall design on the programs.
+					</p>
+					<center><iframe width="560" height="315" src="https://www.youtube.com/embed/XOXD2bUv64U" title="YouTube video player" frameborder="200" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+					<div class="subtitle">A corewar battle visualized by fellow students at 42 Paris.</div>
+					<p>First we built the assembler. My responsibility was to create the functions that create and write the champion executables in bytecode, in which I succeeded well. Overall Niklas did most of the work for the assembler, as the rest of us 
+						moved on to start the work on the virtual machine. For the VM I took the lead in designing the core gameplay loop. It was mostly just figuring out what needed to happen during a specific cycle and in what order. Samuli coded the initialization 
+						of the virtual machine and the arena, while Gerhard took up the task of creating the carriages, which read the state of the arena and held the information about the executable commands of the champions. I coded the main game loop and the checks 
+						which determined what carriages and champions were alive and which had died. All three of us coded the 16 instruction functions together.
+					</p>
+					<p>This project tought me a great deal about how the computer works and handles data, CPU instructions and how low level code can be used to gain performance. For the usage and how to operate the programs, refer to the Github readme. 
+						In the end we succeeded in the project outstandingly, scoring 119/100 points. Our programs didn't have any errors or bugs in them. We also recieved bonus points for our effective implementation on the assembler, great debugging tools and optional flags.
+					</p>
 				</div>
 			</div>
 			<div class="bottom-wrapper">
 				<div class="bottom-left">
-					Created by Oskari Rantanen
+					Created by Oskari Rantanen –– All rights reserved
 				</div>
 				<div class="bottom-center">
 					<img style=vertical-align:middle src="../images/email.svg" width="20" height="20"> oskarijuhani.rantanen@gmail.com

@@ -67,7 +67,7 @@ body {
     color: black !important;
 }
 
-/* Portfolio styles */
+/* Portfolio/Project styles */
 
 .portfolio-items-wrapper {
     display: grid;
@@ -135,7 +135,7 @@ body {
     filter: brightness(5%);
 }
 
-/* Intro styles ## ADD A 0,5 SEC TRANSITION TO EVERY SCREEN ## */
+/* Index styles */
 
 .intro-wrapper {
 	display: flex;
@@ -376,3 +376,38 @@ hr {
 }
 
 /* Contact */
+
+.contact-content-wrapper {
+
+	padding-top: 10%;
+	padding-left: 15%;
+	font-family: "Nunito", sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.contact-image {
+	justify-content: center;
+	min-width: 450px;
+	min-height: auto;
+	max-width: 50vw;
+	max-height: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contact-linkedin {
+	padding: 2%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	color: var(--link-color);
+}
+
+.contact-linkedin a{
+	text-decoration: none;
+}
+
+.contact-email {
+	padding: 2%;
+	padding-top: 5%;
+	color: var(--link-color);
+}
